@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+	<div class="form-container">
+		<div class="form-box" style="min-height: 40vh;">
+			<form method="POST" action="" class="form-register">
+				{{ form.hidden_tag() }}
+				<fieldset class='form-group'>
+					<legend class="pb-2"><pre>        Login  </pre></legend>
+					<div class="form-group">
+						<!--{{ form.email_address.label(class='form-control-label') }}-->
+						{% if form.email_address.errors %}
+							{{ form.email_address(class='form-control form-control-lg is-invalid', placeholder='email address') }}
+							<div class="invalid-feedback">
+								{% for error in form.email_address.errors %}
+									<span>{{ error }}</span>
+								{% endfor %}
+							</div>
+						{% else %}
+							{{ form.email_address(class='form-control form-control-lg', placeholder='email address') }}
+						{% endif %}
+					</div>
+					<div class="form-group">
+						<!--{{ form.password.label(class='form-control-label') }}-->
+						{% if form.password.errors %}
+							{{ form.password(class='form-control form-control-lg is-invalid', placeholder='password') }}
+							<div class="invalid-feedback">
+								{% for error in form.password.errors %}
+									<span>{{ error }}</span>
+								{% endfor %}
+							</div>
+						{% else %}
+							{{ form.password(class='form-control form-control-lg', placeholder='password') }}
+						{% endif %}
+					</div>
+				</fieldset>
+				<div class="form-group">
+					{{form.submit(class='btn btn-outline-dark')}}
+				</div>
+				<div class='border-top pt-2 mb-3'>
+					<small class="text-muted">Don't have an account? <a class='ml-2' href="{{ url_for('register') }}">Sign Up</a>
+					</small>
+				</div>
+			</form>
+		</div>
+	</div>
+
+{% endblock %}

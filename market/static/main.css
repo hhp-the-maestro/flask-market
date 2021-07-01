@@ -1,0 +1,115 @@
+body{
+	background-color: #212121;
+	color: white;
+}
+
+.navbar-dark{
+	background-color: black;
+	color: white;
+	transition-duration: 2s;
+}
+
+.navbar-dark:hover{
+	background-color: darkviolet;
+	transition-duration: 2s;
+}
+
+.form-container{
+	min-height: 90vh;
+	width:  100vw;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(90deg, rgba(150, 50, 70), rgba(70, 50, 150));
+	background-size: cover;
+	background-position: center;
+	perspective: 1000px;
+}
+
+.form-box{
+	min-height: 80vh;
+	width: 25vw;
+	display: inline-flex;
+	border: solid 1px rgba(120, 60, 80, 1.0);
+	align-items: center;
+	border-radius: 15px;
+	justify-content: center;
+	background: linear-gradient(360deg, rgba(120, 60, 80, 0.4), rgba(70, 50, 150, 0.3));
+	background-size: cover;
+	perspective: 1000px;
+
+}
+
+.btn-outline-dark{
+	background: linear-gradient(90deg, rgba(70, 50, 150, 0.7), darkviolet);
+
+}
+
+.btn-outline-dark:hover{
+	background: linear-gradient(90deg, darkviolet, rgba(70, 50, 150, 0.7));
+}
+
+.btn-lg{
+	width: 50vw;
+	height: 10vh;
+	margin-left: 420px;
+	margin-top: 50px;
+}
+
+
+.display-3{
+	color: mediumpurple;
+	padding-left: 350px;
+}
+
+.home-bg{
+	background: linear-gradient(180deg, rgba(150, 50, 150, 0.7), rgba(70, 150, 150, 0.7) );
+
+}
+
+a:hover{
+	color: white;
+	text-decoration: none;
+}
+
+a{
+	color: white;
+	text-decoration: none;
+}
+
+.modal-content{
+	background-color: black;
+}
+
+@keyframes example {
+  from {background: linear-gradient(90deg, rgba(55, 200, 20, 1), rgba(90, 20, 200, 1));}
+  to {background: linear-gradient(90deg, rgba(155, 20, 70, 1), rgba(50, 150, 200, 1));}
+}
+
+.btn-custom{
+	background: linear-gradient(90deg, rgba(55, 200, 20, 1), rgba(90, 20, 200, 1));
+	border-color: seagreen;
+	color: white;
+	animation-name: example;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+}
+
+.container{
+	border: solid 1px hotpink;
+	border-radius: 15px;
+}
+
+.table-dark{
+	color: white;
+	background-color: rgba(120, 100, 150, 0.2);
+	border: solid 2px hotpink;
+	animation-name: example2;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes example2 {
+  from {border: solid 2px darkviolet;}
+  to {border: solid 2px seagreen;}
+}

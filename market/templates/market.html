@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+	<div class="row" style="margin-top: 20px; margin-left: 20px;">
+		<div class="col-8">
+			<h2 style="margin-left: 250px; margin-bottom: 30px;"><em>Available items in the market</em></h2>
+			<table class="table table-dark table-hover">
+			 	<thead>
+				    <tr>
+						<th scope="col">ID</th>
+						<th scope="col">Bar Code</th>
+						<th scope="col">name</th>
+						<th scope="col">Price</th>
+						<th scope="col">Options</th>
+				    </tr>
+			  	</thead>
+			  	<tbody>
+			  		{% for item in items %}
+		  				{% include 'includes/items_modals.html' %}
+					    <tr>
+							<th scope="row">{{ item['id'] }}</th>
+							<td>{{ item['barcode'] }}</td>
+							<td>{{ item['name'] }}</td>
+							<td>${{ item['price'] }}</td>
+							<td>
+								<button class="btn btn-info" data-toggle='modal' data-target="#Modal-MoreInfo-{{ item['id'] }}">Info</button>
+								<button class="btn btn-success" data-toggle='modal' data-target="#Modal-PurchaseConfirm-{{ item['id'] }}">Purchase</button>
+							</td>
+					    </tr>
+				 	{% endfor %}
+			   	</tbody>
+			</table>
+		</div>
+		<div class="col-md-4">
+			<h2 style="margin-left: 120px; margin-top: 50px;"><em>Owned Items</em></h2>
+			<div class="container" style="width: 500px;" >
+				{% for owned_item in owned_items %}
+					{% include 'includes/owned_items_modals.html' %}
+					<div class="text-center">
+						<div>
+							<h4 class="card-title">{{ owned_item.name }}</h4>
+							<button type="button" class="btn btn-custom" style="width: 150px;" data-toggle='modal' data-target="#Modal-selling-{{ owned_item['id'] }}">Sell</button>
+							<p>This item costs ${{owned_item.price}}</p>
+							<hr style="background-color: palevioletred;">
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+
+{% endblock content %}
