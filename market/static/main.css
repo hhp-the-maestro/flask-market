@@ -59,12 +59,12 @@ body{
 
 .display-3{
 	color: mediumpurple;
-	padding-left: 350px;
+	padding-left: 400px;
 }
 
 .home-bg{
 	background: linear-gradient(180deg, rgba(150, 50, 150, 0.7), rgba(70, 150, 150, 0.7) );
-
+	height: 50vh
 }
 
 a:hover{
@@ -112,4 +112,13 @@ a{
 @keyframes example2 {
   from {border: solid 2px darkviolet;}
   to {border: solid 2px seagreen;}
+}
+
+.img-size {
+	width: 100vw;
+	height: 50vh;
+}
+
+.home_btn {
+	align-items: center;
 }

@@ -51,6 +51,7 @@ def market():
 		return render_template('market.html', title='Market', items=items, owned_items=owned_items,
 							    purchase_form=purchase_form, selling_form=selling_form)
 
+
 @app.route('/register', methods=['GET', 'POST'])
 def register():
 	form = RegistrationForm()
